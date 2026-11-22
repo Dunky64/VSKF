@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drivewaybutler.local/ai_result.schema.json",
+  "title": "Vision model result for one quote request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "is_driveway_or_patio",
+    "surface",
+    "dirt_level",
+    "moss",
+    "weeds",
+    "black_spot",
+    "oil_stains",
+    "car_capacity_estimate",
+    "size_band",
+    "upsell_patio",
+    "upsell_walls",
+    "upsell_roof_moss",
+    "image_quality_ok",
+    "confidence",
+    "notes"
+  ],
+  "properties": {
+    "is_driveway_or_patio": { "type": "boolean" },
+    "surface": {
+      "type": "string",
+      "enum": ["block_paving", "tarmac", "concrete", "resin", "slabs", "gravel", "other"]
+    },
+    "dirt_level": { "type": "integer", "minimum": 0, "maximum": 10 },
+    "moss": { "type": "boolean" },
+    "weeds": { "type": "boolean" },
+    "black_spot": { "type": "boolean" },
+    "oil_stains": { "type": "boolean" },
+    "car_capacity_estimate": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4,
+      "description": "How many cars fit. 4 means 4 or more."
+    },
+    "size_band": { "type": "string", "enum": ["S", "M", "L", "XL"] },
+    "upsell_patio": { "type": "boolean" },
+    "upsell_walls": { "type": "boolean" },
+    "upsell_roof_moss": { "type": "boolean" },
+    "image_quality_ok": { "type": "boolean" },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "notes": { "type": "string", "maxLength": 300 }
+  }
+}
