@@ -1,0 +1,9 @@
+# This PC's own files: settings, logs, test results, Python environment
+pc/local/
+pc/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# Sample photos are downloaded on the PC, not stored on GitHub
+samples/photos/
+.env
